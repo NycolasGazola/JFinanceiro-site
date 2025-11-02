@@ -1,0 +1,418 @@
+:root {
+    /* Cores alinhadas com o logo (gradiente do SVG: #006699 -> #00b3a6) */
+    --cor-primaria: #006699; /* azul/teal */
+    --cor-secundaria: #00b3a6; /* verde/teal claro */
+    --cor-primaria-escuro: #004e66; /* versão mais escura para fundos */
+    --cor-texto: #333;
+    --cor-fundo-claro: #eaf8f7; /* tom muito claro baseado no secundário */
+    --cor-fundo-escuro: var(--cor-primaria-escuro);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: var(--cor-primaria);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: transform 0.18s ease, filter 0.18s ease;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.95);
+}
+
+.cta-loja img {
+    width: 30px; /* Tamanho dos selos de loja */
+    margin: 0 40px;
+    transition: transform 0.3s;
+}
+
+.cta-loja img:hover {
+    transform: scale(1.05);
+}
+
+header {
+    background-color: white;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--cor-fundo-claro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.2em;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+nav a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+}
+
+/* Botão de link externo (CodXTech) - usado no header e rodapé */
+.btn-externo {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-externo:hover,
+.btn-externo:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    outline: none;
+}
+
+/* variação menor para o rodapé */
+.footer-site {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+
+#hero {
+    background-color: var(--cor-fundo-claro);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.hero-text .cta-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.hero-image {
+    max-width: 45%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.nota-confianca {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+#recursos {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.recurso-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.recurso-item:nth-child(even) {
+    /* Inverte a ordem para design alternado */
+    flex-direction: row-reverse;
+}
+
+.recurso-text {
+    max-width: 50%;
+}
+
+.recurso-text h3 {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+.recurso-image {
+    max-width: 45%;
+}
+
+.recurso-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+#prova-social {
+    padding: 60px 0;
+    background-color: var(--cor-fundo-escuro);
+    color: white;
+    text-align: center;
+}
+
+#prova-social h2 {
+    color: white;
+}
+
+.depoimentos-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.depoimento-card {
+    background-color: var(--cor-primaria-escuro);
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 350px;
+    text-align: left;
+    position: relative;
+}
+
+.depoimento-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.depoimento-card footer {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--cor-secundaria);
+}
+
+.estatisticas {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.estatisticas-item strong {
+    display: block;
+    font-size: 2.5em;
+    color: var(--cor-secundaria);
+}
+
+.estatisticas-item span {
+    font-size: 1.1em;
+}
+
+
+#cta-final {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--cor-secundaria);
+}
+
+#cta-final h2 {
+    font-size: 3em;
+    color: var(--cor-primaria);
+}
+
+#cta-final .btn-primary {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-info h4{
+    color: var(--cor-secundaria);
+}
+
+.footer-links, .footer-info {
+    width: 30%;
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--cor-secundaria);
+}
+
+.footer-links a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-primaria-escuro);
+}
+
+/* -------------------------------------- */
+/* RESPONSIVIDADE (MOBILE) */
+/* -------------------------------------- */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-text {
+        order: 2;
+        margin-top: 40px;
+    }
+
+    .hero-image {
+        order: 1;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+    }
+
+    .hero-text .cta-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .recurso-item {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .recurso-text, .recurso-image {
+        max-width: 100%;
+    }
+
+    .depoimento-card {
+        max-width: 100%;
+    }
+
+    .estatisticas {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-links, .footer-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar nav {
+        display: none; 
+    }
+
+    /* Ajustes responsivos para o logo */
+    .site-logo {
+        height: 36px;
+    }
+
+    .logo-text {
+        font-size: 1rem; /* reduz o texto do logo em telas pequenas */
+    }
+
+    /* reduzir padding do botão no mobile */
+    .btn-externo {
+        padding: 6px 10px;
+        font-size: 0.95rem;
+    }
+}
