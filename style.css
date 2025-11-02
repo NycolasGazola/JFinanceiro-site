@@ -1,10 +1,8 @@
 :root {
-    /* Cores alinhadas com o logo (gradiente do SVG: #006699 -> #00b3a6) */
-    --cor-primaria: #006699; /* azul/teal */
-    --cor-secundaria: #00b3a6; /* verde/teal claro */
-    --cor-primaria-escuro: #004e66; /* versão mais escura para fundos */
-    --cor-texto: #333;
-    --cor-fundo-claro: #eaf8f7; /* tom muito claro baseado no secundário */
+    --cor-primaria: #006699; 
+    --cor-secundaria: #00b3a6; 
+    --cor-primaria-escuro: #004e66; 
+    --cor-fundo-claro: #eaf8f7; 
     --cor-fundo-escuro: var(--cor-primaria-escuro);
 }
 
@@ -54,7 +52,7 @@ h2 {
 }
 
 .cta-loja img {
-    width: 30px; /* Tamanho dos selos de loja */
+    width: 30px; 
     margin: 0 40px;
     transition: transform 0.3s;
 }
