@@ -103,6 +103,37 @@ nav a {
     font-weight: 500;
 }
 
+/* Listas com setas em cada item */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 28px; /* espaço para a seta */
+    margin-bottom: 8px;
+}
+
+ul li::before {
+    content: '▸'; /* seta triangular */
+    position: absolute;
+    left: 0;
+    top: 0.05rem;
+    color: var(--cor-primaria);
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+/* listas aninhadas têm setas menores */
+ul li ul li::before {
+    content: '•';
+    color: var(--cor-secundaria);
+    font-size: 0.85rem;
+    left: 6px;
+}
+
 /* garantir que o nav seja um flex container no desktop */
 nav {
     display: flex;
