@@ -20,6 +20,10 @@
                 <img src="download.png" alt="JFinanceiro" class="site-logo">
                 <span class="logo-text">JFinanceiro</span>
             </a>
+            <!-- botão toggle do menu (aparece em mobile) -->
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
             <nav>
                 <a href="#recursos">Recursos</a>
                 <a href="#prova-social">Depoimentos</a>
@@ -184,7 +188,29 @@
             </div>
         </div>
     </footer>
+    </footer>
 
+        <script>
+            // Toggle do menu mobile: adiciona/Remove a classe 'open' em <nav>
+            (function(){
+                const btn = document.querySelector('.nav-toggle');
+                const nav = document.querySelector('.navbar nav');
+                if(!btn || !nav) return;
+                btn.addEventListener('click', function(){
+                    const isOpen = nav.classList.toggle('open');
+                    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+                // fecha o menu ao clicar em um link (útil no mobile)
+                nav.querySelectorAll('a').forEach(a => {
+                    a.addEventListener('click', () => {
+                        if(nav.classList.contains('open')){
+                            nav.classList.remove('open');
+                            btn.setAttribute('aria-expanded','false');
+                        }
+                    });
+                });
+            })();
+        </script>
 </body>
 </html>
 

@@ -1,6 +1,6 @@
 :root {
     --cor-primaria: #006699; 
-    --cor-secundaria: #00b3a6; 
+    --cor-secundaria: #98eaff; 
     --cor-primaria-escuro: #004e66; 
     --cor-fundo-claro: #eaf8f7; 
     --cor-fundo-escuro: var(--cor-primaria-escuro);
@@ -23,7 +23,8 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    /* aumentar espaçamento lateral para deixar conteúdo mais distante das extremidades */
+    padding: 0 40px;
 }
 
 h2 {
@@ -101,6 +102,45 @@ nav a {
     margin-left: 25px;
     font-weight: 500;
 }
+
+/* garantir que o nav seja um flex container no desktop */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* botão toggle (hamburger) - oculto no desktop */
+.nav-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 2px;
+    background: var(--cor-primaria);
+}
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: var(--cor-primaria);
+}
+.hamburger::before{ top: -7px; }
+.hamburger::after{ top: 7px; }
 
 /* Botão de link externo (CodXTech) - usado no header e rodapé */
 .btn-externo {
@@ -341,8 +381,49 @@ footer {
         text-align: center;
     }
 
+    /* reduzir padding lateral no mobile para compensar o aumento em desktop */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* mostrar botão toggle e esconder nav por padrão */
+    .nav-toggle{
+        display: inline-flex;
+    }
+
+    .navbar{
+        position: relative; /* para posicionamento absoluto do menu mobile */
+    }
+
+    .navbar nav{
+        display: none;
+        position: absolute;
+        top: 62px;
+        right: 20px;
+        left: 20px;
+        background: white;
+        padding: 14px;
+        border-radius: 10px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1500;
+    }
+
+    /* menu aberto */
+    .navbar nav.open{
+        display: flex;
+    }
+
+    /* ajustar estilo dos links dentro do menu mobile */
+    .navbar nav a{
+        margin-left: 0;
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
     .hero-text, .hero-image {
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .hero-text {
@@ -355,11 +436,11 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2.5em;
+        font-size: 1.5em;
     }
 
     .hero-text p {
-        font-size: 1.1em;
+        font-size: 1.5em;
     }
 
     .hero-text .cta-group {
@@ -373,11 +454,11 @@ footer {
     }
 
     .recurso-text, .recurso-image {
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .depoimento-card {
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .estatisticas {
@@ -391,7 +472,7 @@ footer {
     }
 
     .footer-links, .footer-info {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
 
@@ -411,6 +492,6 @@ footer {
     /* reduzir padding do botão no mobile */
     .btn-externo {
         padding: 6px 10px;
-        font-size: 0.95rem;
+        font-size: 1.5rem;
     }
 }
