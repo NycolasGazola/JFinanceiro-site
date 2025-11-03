@@ -1,9 +1,11 @@
 :root {
-    --cor-primaria: #006699; 
-    --cor-secundaria: #72c2ff; 
-    --cor-primaria-escuro: #004e66; 
-    --cor-fundo-claro: #eaf8f7; 
+    /* Cores harmonizadas com o logo */
+    --cor-primaria: #1851b2; /* azul principal do logo */
+    --cor-secundaria: #0cc0df; /* azul claro/teal do logo */
+    --cor-primaria-escuro: #123c8a; /* versão mais escura do azul principal */
+    --cor-fundo-claro: #e8f4ff; /* fundo muito claro derivado do azul */
     --cor-fundo-escuro: var(--cor-primaria-escuro);
+    --cor-texto: #333;
 }
 
 
